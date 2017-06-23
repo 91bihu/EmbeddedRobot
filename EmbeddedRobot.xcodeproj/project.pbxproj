@@ -1,0 +1,532 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3326288C1EFD3CC400736273 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3326288B1EFD3CC400736273 /* main.m */; };
+		3326288F1EFD3CC400736273 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3326288E1EFD3CC400736273 /* AppDelegate.m */; };
+		332628921EFD3CC400736273 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 332628911EFD3CC400736273 /* ViewController.m */; };
+		332628951EFD3CC400736273 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 332628931EFD3CC400736273 /* Main.storyboard */; };
+		332628971EFD3CC400736273 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 332628961EFD3CC400736273 /* Assets.xcassets */; };
+		3326289A1EFD3CC400736273 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 332628981EFD3CC400736273 /* LaunchScreen.storyboard */; };
+		332628A51EFD3CC500736273 /* EmbeddedRobotTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 332628A41EFD3CC500736273 /* EmbeddedRobotTests.m */; };
+		332628B01EFD3CC500736273 /* EmbeddedRobotUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 332628AF1EFD3CC500736273 /* EmbeddedRobotUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		332628A11EFD3CC500736273 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3326287F1EFD3CC400736273 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 332628861EFD3CC400736273;
+			remoteInfo = EmbeddedRobot;
+		};
+		332628AC1EFD3CC500736273 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3326287F1EFD3CC400736273 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 332628861EFD3CC400736273;
+			remoteInfo = EmbeddedRobot;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		332628871EFD3CC400736273 /* EmbeddedRobot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmbeddedRobot.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3326288B1EFD3CC400736273 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3326288D1EFD3CC400736273 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		3326288E1EFD3CC400736273 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		332628901EFD3CC400736273 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		332628911EFD3CC400736273 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		332628941EFD3CC400736273 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		332628961EFD3CC400736273 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		332628991EFD3CC400736273 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3326289B1EFD3CC400736273 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		332628A01EFD3CC500736273 /* EmbeddedRobotTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EmbeddedRobotTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		332628A41EFD3CC500736273 /* EmbeddedRobotTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EmbeddedRobotTests.m; sourceTree = "<group>"; };
+		332628A61EFD3CC500736273 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		332628AB1EFD3CC500736273 /* EmbeddedRobotUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EmbeddedRobotUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		332628AF1EFD3CC500736273 /* EmbeddedRobotUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EmbeddedRobotUITests.m; sourceTree = "<group>"; };
+		332628B11EFD3CC500736273 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		332628841EFD3CC400736273 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3326289D1EFD3CC500736273 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		332628A81EFD3CC500736273 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3326287E1EFD3CC400736273 = {
+			isa = PBXGroup;
+			children = (
+				332628891EFD3CC400736273 /* EmbeddedRobot */,
+				332628A31EFD3CC500736273 /* EmbeddedRobotTests */,
+				332628AE1EFD3CC500736273 /* EmbeddedRobotUITests */,
+				332628881EFD3CC400736273 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		332628881EFD3CC400736273 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				332628871EFD3CC400736273 /* EmbeddedRobot.app */,
+				332628A01EFD3CC500736273 /* EmbeddedRobotTests.xctest */,
+				332628AB1EFD3CC500736273 /* EmbeddedRobotUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		332628891EFD3CC400736273 /* EmbeddedRobot */ = {
+			isa = PBXGroup;
+			children = (
+				3326288D1EFD3CC400736273 /* AppDelegate.h */,
+				3326288E1EFD3CC400736273 /* AppDelegate.m */,
+				332628901EFD3CC400736273 /* ViewController.h */,
+				332628911EFD3CC400736273 /* ViewController.m */,
+				332628931EFD3CC400736273 /* Main.storyboard */,
+				332628961EFD3CC400736273 /* Assets.xcassets */,
+				332628981EFD3CC400736273 /* LaunchScreen.storyboard */,
+				3326289B1EFD3CC400736273 /* Info.plist */,
+				3326288A1EFD3CC400736273 /* Supporting Files */,
+			);
+			path = EmbeddedRobot;
+			sourceTree = "<group>";
+		};
+		3326288A1EFD3CC400736273 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3326288B1EFD3CC400736273 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		332628A31EFD3CC500736273 /* EmbeddedRobotTests */ = {
+			isa = PBXGroup;
+			children = (
+				332628A41EFD3CC500736273 /* EmbeddedRobotTests.m */,
+				332628A61EFD3CC500736273 /* Info.plist */,
+			);
+			path = EmbeddedRobotTests;
+			sourceTree = "<group>";
+		};
+		332628AE1EFD3CC500736273 /* EmbeddedRobotUITests */ = {
+			isa = PBXGroup;
+			children = (
+				332628AF1EFD3CC500736273 /* EmbeddedRobotUITests.m */,
+				332628B11EFD3CC500736273 /* Info.plist */,
+			);
+			path = EmbeddedRobotUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		332628861EFD3CC400736273 /* EmbeddedRobot */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 332628B41EFD3CC500736273 /* Build configuration list for PBXNativeTarget "EmbeddedRobot" */;
+			buildPhases = (
+				332628831EFD3CC400736273 /* Sources */,
+				332628841EFD3CC400736273 /* Frameworks */,
+				332628851EFD3CC400736273 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EmbeddedRobot;
+			productName = EmbeddedRobot;
+			productReference = 332628871EFD3CC400736273 /* EmbeddedRobot.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3326289F1EFD3CC500736273 /* EmbeddedRobotTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 332628B71EFD3CC500736273 /* Build configuration list for PBXNativeTarget "EmbeddedRobotTests" */;
+			buildPhases = (
+				3326289C1EFD3CC500736273 /* Sources */,
+				3326289D1EFD3CC500736273 /* Frameworks */,
+				3326289E1EFD3CC500736273 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				332628A21EFD3CC500736273 /* PBXTargetDependency */,
+			);
+			name = EmbeddedRobotTests;
+			productName = EmbeddedRobotTests;
+			productReference = 332628A01EFD3CC500736273 /* EmbeddedRobotTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		332628AA1EFD3CC500736273 /* EmbeddedRobotUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 332628BA1EFD3CC500736273 /* Build configuration list for PBXNativeTarget "EmbeddedRobotUITests" */;
+			buildPhases = (
+				332628A71EFD3CC500736273 /* Sources */,
+				332628A81EFD3CC500736273 /* Frameworks */,
+				332628A91EFD3CC500736273 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				332628AD1EFD3CC500736273 /* PBXTargetDependency */,
+			);
+			name = EmbeddedRobotUITests;
+			productName = EmbeddedRobotUITests;
+			productReference = 332628AB1EFD3CC500736273 /* EmbeddedRobotUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3326287F1EFD3CC400736273 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = initial;
+				TargetAttributes = {
+					332628861EFD3CC400736273 = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+					};
+					3326289F1EFD3CC500736273 = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 332628861EFD3CC400736273;
+					};
+					332628AA1EFD3CC500736273 = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 332628861EFD3CC400736273;
+					};
+				};
+			};
+			buildConfigurationList = 332628821EFD3CC400736273 /* Build configuration list for PBXProject "EmbeddedRobot" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3326287E1EFD3CC400736273;
+			productRefGroup = 332628881EFD3CC400736273 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				332628861EFD3CC400736273 /* EmbeddedRobot */,
+				3326289F1EFD3CC500736273 /* EmbeddedRobotTests */,
+				332628AA1EFD3CC500736273 /* EmbeddedRobotUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		332628851EFD3CC400736273 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3326289A1EFD3CC400736273 /* LaunchScreen.storyboard in Resources */,
+				332628971EFD3CC400736273 /* Assets.xcassets in Resources */,
+				332628951EFD3CC400736273 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3326289E1EFD3CC500736273 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		332628A91EFD3CC500736273 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		332628831EFD3CC400736273 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				332628921EFD3CC400736273 /* ViewController.m in Sources */,
+				3326288F1EFD3CC400736273 /* AppDelegate.m in Sources */,
+				3326288C1EFD3CC400736273 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3326289C1EFD3CC500736273 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				332628A51EFD3CC500736273 /* EmbeddedRobotTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		332628A71EFD3CC500736273 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				332628B01EFD3CC500736273 /* EmbeddedRobotUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		332628A21EFD3CC500736273 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 332628861EFD3CC400736273 /* EmbeddedRobot */;
+			targetProxy = 332628A11EFD3CC500736273 /* PBXContainerItemProxy */;
+		};
+		332628AD1EFD3CC500736273 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 332628861EFD3CC400736273 /* EmbeddedRobot */;
+			targetProxy = 332628AC1EFD3CC500736273 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		332628931EFD3CC400736273 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				332628941EFD3CC400736273 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		332628981EFD3CC400736273 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				332628991EFD3CC400736273 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		332628B21EFD3CC500736273 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		332628B31EFD3CC500736273 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		332628B51EFD3CC500736273 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = EmbeddedRobot/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = xuan.EmbeddedRobot;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		332628B61EFD3CC500736273 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = EmbeddedRobot/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = xuan.EmbeddedRobot;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		332628B81EFD3CC500736273 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = EmbeddedRobotTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = xuan.EmbeddedRobotTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EmbeddedRobot.app/EmbeddedRobot";
+			};
+			name = Debug;
+		};
+		332628B91EFD3CC500736273 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = EmbeddedRobotTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = xuan.EmbeddedRobotTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EmbeddedRobot.app/EmbeddedRobot";
+			};
+			name = Release;
+		};
+		332628BB1EFD3CC500736273 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = EmbeddedRobotUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = xuan.EmbeddedRobotUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = EmbeddedRobot;
+			};
+			name = Debug;
+		};
+		332628BC1EFD3CC500736273 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = EmbeddedRobotUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = xuan.EmbeddedRobotUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = EmbeddedRobot;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		332628821EFD3CC400736273 /* Build configuration list for PBXProject "EmbeddedRobot" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				332628B21EFD3CC500736273 /* Debug */,
+				332628B31EFD3CC500736273 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		332628B41EFD3CC500736273 /* Build configuration list for PBXNativeTarget "EmbeddedRobot" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				332628B51EFD3CC500736273 /* Debug */,
+				332628B61EFD3CC500736273 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		332628B71EFD3CC500736273 /* Build configuration list for PBXNativeTarget "EmbeddedRobotTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				332628B81EFD3CC500736273 /* Debug */,
+				332628B91EFD3CC500736273 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		332628BA1EFD3CC500736273 /* Build configuration list for PBXNativeTarget "EmbeddedRobotUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				332628BB1EFD3CC500736273 /* Debug */,
+				332628BC1EFD3CC500736273 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3326287F1EFD3CC400736273 /* Project object */;
+}
