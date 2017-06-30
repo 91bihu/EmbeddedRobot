@@ -8,6 +8,9 @@
 
 #import "AppDelegate.h"
 
+#import "BHLoginController.h"
+#import "BHAPIBase.h"
+#import "RootViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -17,6 +20,25 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    
+    
+    //[BHAPIBase getToken] 获取保存的登录token 通过判断是否存在 跳转 登录页或者主页
+    if ([BHAPIBase getToken].length == 0) {
+        BHLoginController *loginVc=[BHLoginController new];
+        UINavigationController *logNav=[[UINavigationController alloc]initWithRootViewController:loginVc];
+        self.window.rootViewController=logNav;
+        
+    }else{
+        RootViewController *rootVc=[RootViewController new];
+        UINavigationController *rootNav=[[UINavigationController alloc]initWithRootViewController:rootVc];
+        self.window.rootViewController=rootNav;
+    }
+    
+    
+
+
+   [self.window makeKeyAndVisible];
     return YES;
 }
 

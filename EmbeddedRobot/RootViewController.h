@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  RootViewController.h
 //  EmbeddedRobot
 //
 //  Created by bihu_Mac on 2017/6/23.
@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface RootViewController : UIViewController
 
+
+@property (nonatomic, strong) NSString *tokenString;
 
 @end
-

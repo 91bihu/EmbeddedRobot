@@ -7,14 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		054117B976C722A14EA4B5C6 /* libPods-EmbeddedRobot.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 281962A0932D99A6785A60D3 /* libPods-EmbeddedRobot.a */; };
 		3326288C1EFD3CC400736273 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3326288B1EFD3CC400736273 /* main.m */; };
 		3326288F1EFD3CC400736273 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3326288E1EFD3CC400736273 /* AppDelegate.m */; };
-		332628921EFD3CC400736273 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 332628911EFD3CC400736273 /* ViewController.m */; };
 		332628951EFD3CC400736273 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 332628931EFD3CC400736273 /* Main.storyboard */; };
 		332628971EFD3CC400736273 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 332628961EFD3CC400736273 /* Assets.xcassets */; };
 		3326289A1EFD3CC400736273 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 332628981EFD3CC400736273 /* LaunchScreen.storyboard */; };
 		332628A51EFD3CC500736273 /* EmbeddedRobotTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 332628A41EFD3CC500736273 /* EmbeddedRobotTests.m */; };
 		332628B01EFD3CC500736273 /* EmbeddedRobotUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 332628AF1EFD3CC500736273 /* EmbeddedRobotUITests.m */; };
+		332628C21EFD3D6900736273 /* BHAPIBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 332628BF1EFD3D6900736273 /* BHAPIBase.m */; };
+		332628C31EFD3D6900736273 /* BHAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 332628C11EFD3D6900736273 /* BHAPIManager.m */; };
+		332628C61EFD3FEA00736273 /* BHLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 332628C41EFD3FEA00736273 /* BHLoginController.m */; };
+		332628CA1EFD452100736273 /* username@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 332628C91EFD452100736273 /* username@2x.png */; };
+		332628CD1EFD46E700736273 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 332628CC1EFD46E700736273 /* RootViewController.m */; };
+		332628D11EFD4A2500736273 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 332628D01EFD4A2500736273 /* Info.plist */; };
+		333044F11F05052D001EFE0C /* QuotationListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 333044F01F05052D001EFE0C /* QuotationListViewController.m */; };
+		339B04D71F0252D8004D9CEB /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 339B04D61F0252D8004D9CEB /* KeychainItemWrapper.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,22 +43,36 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		281962A0932D99A6785A60D3 /* libPods-EmbeddedRobot.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EmbeddedRobot.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		332628871EFD3CC400736273 /* EmbeddedRobot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmbeddedRobot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3326288B1EFD3CC400736273 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3326288D1EFD3CC400736273 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3326288E1EFD3CC400736273 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		332628901EFD3CC400736273 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		332628911EFD3CC400736273 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		332628941EFD3CC400736273 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		332628961EFD3CC400736273 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		332628991EFD3CC400736273 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		3326289B1EFD3CC400736273 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		332628A01EFD3CC500736273 /* EmbeddedRobotTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EmbeddedRobotTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		332628A41EFD3CC500736273 /* EmbeddedRobotTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EmbeddedRobotTests.m; sourceTree = "<group>"; };
 		332628A61EFD3CC500736273 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		332628AB1EFD3CC500736273 /* EmbeddedRobotUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EmbeddedRobotUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		332628AF1EFD3CC500736273 /* EmbeddedRobotUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EmbeddedRobotUITests.m; sourceTree = "<group>"; };
 		332628B11EFD3CC500736273 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		332628BE1EFD3D6900736273 /* BHAPIBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHAPIBase.h; sourceTree = "<group>"; };
+		332628BF1EFD3D6900736273 /* BHAPIBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHAPIBase.m; sourceTree = "<group>"; };
+		332628C01EFD3D6900736273 /* BHAPIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHAPIManager.h; sourceTree = "<group>"; };
+		332628C11EFD3D6900736273 /* BHAPIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHAPIManager.m; sourceTree = "<group>"; };
+		332628C41EFD3FEA00736273 /* BHLoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHLoginController.m; sourceTree = "<group>"; };
+		332628C51EFD3FEA00736273 /* BHLoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHLoginController.h; sourceTree = "<group>"; };
+		332628C91EFD452100736273 /* username@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "username@2x.png"; sourceTree = "<group>"; };
+		332628CB1EFD46E700736273 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		332628CC1EFD46E700736273 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		332628D01EFD4A2500736273 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		333044EF1F05052D001EFE0C /* QuotationListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuotationListViewController.h; sourceTree = "<group>"; };
+		333044F01F05052D001EFE0C /* QuotationListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuotationListViewController.m; sourceTree = "<group>"; };
+		339B04D51F0252D8004D9CEB /* KeychainItemWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainItemWrapper.h; sourceTree = "<group>"; };
+		339B04D61F0252D8004D9CEB /* KeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainItemWrapper.m; sourceTree = "<group>"; };
+		5B934BBB88CF290EC52C64FA /* Pods-EmbeddedRobot.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EmbeddedRobot.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EmbeddedRobot/Pods-EmbeddedRobot.debug.xcconfig"; sourceTree = "<group>"; };
+		6FB70E1DC740A0ADC7F279C5 /* Pods-EmbeddedRobot.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EmbeddedRobot.release.xcconfig"; path = "Pods/Target Support Files/Pods-EmbeddedRobot/Pods-EmbeddedRobot.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				054117B976C722A14EA4B5C6 /* libPods-EmbeddedRobot.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +101,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1E936B16EDE4922ADC582773 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5B934BBB88CF290EC52C64FA /* Pods-EmbeddedRobot.debug.xcconfig */,
+				6FB70E1DC740A0ADC7F279C5 /* Pods-EmbeddedRobot.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		2A91D1042EC9E59CC00D2A9C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				281962A0932D99A6785A60D3 /* libPods-EmbeddedRobot.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		3326287E1EFD3CC400736273 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +125,8 @@
 				332628A31EFD3CC500736273 /* EmbeddedRobotTests */,
 				332628AE1EFD3CC500736273 /* EmbeddedRobotUITests */,
 				332628881EFD3CC400736273 /* Products */,
+				1E936B16EDE4922ADC582773 /* Pods */,
+				2A91D1042EC9E59CC00D2A9C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,14 +143,20 @@
 		332628891EFD3CC400736273 /* EmbeddedRobot */ = {
 			isa = PBXGroup;
 			children = (
+				332628C91EFD452100736273 /* username@2x.png */,
 				3326288D1EFD3CC400736273 /* AppDelegate.h */,
 				3326288E1EFD3CC400736273 /* AppDelegate.m */,
-				332628901EFD3CC400736273 /* ViewController.h */,
-				332628911EFD3CC400736273 /* ViewController.m */,
+				332628C51EFD3FEA00736273 /* BHLoginController.h */,
+				332628C41EFD3FEA00736273 /* BHLoginController.m */,
+				332628CB1EFD46E700736273 /* RootViewController.h */,
+				332628CC1EFD46E700736273 /* RootViewController.m */,
+				333044EF1F05052D001EFE0C /* QuotationListViewController.h */,
+				333044F01F05052D001EFE0C /* QuotationListViewController.m */,
+				332628BD1EFD3D6900736273 /* Tool */,
 				332628931EFD3CC400736273 /* Main.storyboard */,
 				332628961EFD3CC400736273 /* Assets.xcassets */,
+				332628D01EFD4A2500736273 /* Info.plist */,
 				332628981EFD3CC400736273 /* LaunchScreen.storyboard */,
-				3326289B1EFD3CC400736273 /* Info.plist */,
 				3326288A1EFD3CC400736273 /* Supporting Files */,
 			);
 			path = EmbeddedRobot;
@@ -140,6 +188,19 @@
 			path = EmbeddedRobotUITests;
 			sourceTree = "<group>";
 		};
+		332628BD1EFD3D6900736273 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				332628BE1EFD3D6900736273 /* BHAPIBase.h */,
+				332628BF1EFD3D6900736273 /* BHAPIBase.m */,
+				332628C01EFD3D6900736273 /* BHAPIManager.h */,
+				332628C11EFD3D6900736273 /* BHAPIManager.m */,
+				339B04D51F0252D8004D9CEB /* KeychainItemWrapper.h */,
+				339B04D61F0252D8004D9CEB /* KeychainItemWrapper.m */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -147,9 +208,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 332628B41EFD3CC500736273 /* Build configuration list for PBXNativeTarget "EmbeddedRobot" */;
 			buildPhases = (
+				B9FAABB0AF6869A1507F9CEB /* [CP] Check Pods Manifest.lock */,
 				332628831EFD3CC400736273 /* Sources */,
 				332628841EFD3CC400736273 /* Frameworks */,
 				332628851EFD3CC400736273 /* Resources */,
+				5BA494AFAE24F9C6F5916A5F /* [CP] Embed Pods Frameworks */,
+				9CD76F0A9249DC0FD943DF23 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -207,6 +271,7 @@
 				TargetAttributes = {
 					332628861EFD3CC400736273 = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 8NZL4MFD85;
 						ProvisioningStyle = Automatic;
 					};
 					3326289F1EFD3CC500736273 = {
@@ -248,6 +313,8 @@
 			files = (
 				3326289A1EFD3CC400736273 /* LaunchScreen.storyboard in Resources */,
 				332628971EFD3CC400736273 /* Assets.xcassets in Resources */,
+				332628D11EFD4A2500736273 /* Info.plist in Resources */,
+				332628CA1EFD452100736273 /* username@2x.png in Resources */,
 				332628951EFD3CC400736273 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -268,14 +335,67 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5BA494AFAE24F9C6F5916A5F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EmbeddedRobot/Pods-EmbeddedRobot-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9CD76F0A9249DC0FD943DF23 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EmbeddedRobot/Pods-EmbeddedRobot-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B9FAABB0AF6869A1507F9CEB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		332628831EFD3CC400736273 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				332628921EFD3CC400736273 /* ViewController.m in Sources */,
+				332628CD1EFD46E700736273 /* RootViewController.m in Sources */,
+				332628C31EFD3D6900736273 /* BHAPIManager.m in Sources */,
+				332628C21EFD3D6900736273 /* BHAPIBase.m in Sources */,
+				332628C61EFD3FEA00736273 /* BHLoginController.m in Sources */,
 				3326288F1EFD3CC400736273 /* AppDelegate.m in Sources */,
 				3326288C1EFD3CC400736273 /* main.m in Sources */,
+				339B04D71F0252D8004D9CEB /* KeychainItemWrapper.m in Sources */,
+				333044F11F05052D001EFE0C /* QuotationListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,9 +544,12 @@
 		};
 		332628B51EFD3CC500736273 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5B934BBB88CF290EC52C64FA /* Pods-EmbeddedRobot.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 8NZL4MFD85;
 				INFOPLIST_FILE = EmbeddedRobot/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = xuan.EmbeddedRobot;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -435,9 +558,12 @@
 		};
 		332628B61EFD3CC500736273 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6FB70E1DC740A0ADC7F279C5 /* Pods-EmbeddedRobot.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 8NZL4MFD85;
 				INFOPLIST_FILE = EmbeddedRobot/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = xuan.EmbeddedRobot;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -509,6 +635,7 @@
 				332628B61EFD3CC500736273 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		332628B71EFD3CC500736273 /* Build configuration list for PBXNativeTarget "EmbeddedRobotTests" */ = {
 			isa = XCConfigurationList;
@@ -517,6 +644,7 @@
 				332628B91EFD3CC500736273 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		332628BA1EFD3CC500736273 /* Build configuration list for PBXNativeTarget "EmbeddedRobotUITests" */ = {
 			isa = XCConfigurationList;
@@ -525,6 +653,7 @@
 				332628BC1EFD3CC500736273 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
