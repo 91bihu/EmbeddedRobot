@@ -13,7 +13,10 @@
 #import "BHLoginController.h"
 #import "AppDelegate.h"
 #import "QuotationListViewController.h"
-@interface RootViewController ()<WKNavigationDelegate,WKScriptMessageHandler,UIScrollViewDelegate>
+static NSString *const  GoLogin = @"goLogin";
+static NSString *const GoHome = @"goHome";
+
+@interface RootViewController ()<WKNavigationDelegate,WKScriptMessageHandler,WKUIDelegate>
 
 @property(nonatomic,strong) WKWebView *webView;
 @end
@@ -23,176 +26,145 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-    self.title = @"机器人内嵌";
-    
-    UIButton *saveButton=[UIButton buttonWithType:(UIButtonTypeSystem)];
+    self.title = @"预约爱推修";
+    UIButton *backButton=[UIButton buttonWithType:(UIButtonTypeSystem)];
     // xiaoxi_weidu
-    [saveButton setTitle:@"报价单" forState:UIControlStateNormal];
+    [backButton setImage:[UIImage imageNamed:@"leftArrow"] forState:UIControlStateNormal];
+    [backButton addTarget:self action:@selector(leftButton) forControlEvents:UIControlEventTouchUpInside];
+    [backButton setTintColor:[UIColor blackColor]];
+    backButton.frame=CGRectMake(0, 0, 40, 30);
+    UIBarButtonItem *leftBarButton = [[UIBarButtonItem alloc] initWithCustomView:backButton];
+    [leftBarButton setTintColor:[UIColor blackColor]];
+    self.navigationItem.leftBarButtonItem = leftBarButton;
     
-    [saveButton addTarget:self action:@selector(buttonPress) forControlEvents:UIControlEventTouchUpInside];
-    [saveButton setTintColor:[UIColor blackColor]];
-    
-    saveButton.frame=CGRectMake(0, 0, 60, 30);
-    UIBarButtonItem *navRightButton = [[UIBarButtonItem alloc] initWithCustomView:saveButton];
-    [navRightButton setTintColor:[UIColor blackColor]];
-    self.navigationItem.rightBarButtonItem = navRightButton;
-    
-    
-    UIButton *leftButton=[UIButton buttonWithType:(UIButtonTypeCustom)];
-    // xiaoxi_weidu
-    [leftButton setTitle:@"清除" forState:UIControlStateNormal];
-    
-    [leftButton addTarget:self action:@selector(leftButton) forControlEvents:UIControlEventTouchUpInside];
-    leftButton.frame=CGRectMake(0, 0, 40, 30);
-    UIBarButtonItem *navLeftButton = [[UIBarButtonItem alloc] initWithCustomView:leftButton];
-    self.navigationItem.leftBarButtonItem = navLeftButton;
-    
-    
-    
-    // 禁止选择CSS
-    NSString *css = @"body{-webkit-user-select:none;-webkit-user-drag:none;}";
-    
-    // CSS选中样式取消
-    NSMutableString *javascript = [NSMutableString string];
-    [javascript appendString:@"var style = document.createElement('style');"];
-    [javascript appendString:@"style.type = 'text/css';"];
-    [javascript appendFormat:@"var cssContent = document.createTextNode('%@');", css];
-    [javascript appendString:@"style.appendChild(cssContent);"];
-    [javascript appendString:@"document.body.appendChild(style);"];
-    
-    // javascript注入
-    WKUserScript *noneSelectScript = [[WKUserScript alloc] initWithSource:javascript injectionTime:WKUserScriptInjectionTimeAtDocumentEnd forMainFrameOnly:YES];
-    
-    WKUserContentController* userContent = [[WKUserContentController alloc] init];
-    // 添加消息处理，注意：self指代的对象需要遵守WKScriptMessageHandler协议，结束时需要移除
-    [userContent addUserScript:noneSelectScript];
-    WKWebViewConfiguration *config = [[WKWebViewConfiguration alloc] init];
-    config.userContentController = userContent;
-    // 创建UserContentController（提供JavaScript向webView发送消息的方法）
-    
-    
-    // 将UserConttentController设置到配置文件
-    config.userContentController = userContent;
-    
-    _webView=[[WKWebView alloc]initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height) configuration:config];
-    _webView.navigationDelegate=self;
+    UserData * data = [UserData sharedUserData];
+    NSURL * url = [NSURL URLWithString:@"http://192.168.5.19:7776"];
+    NSURLRequest * request = [NSURLRequest requestWithURL:url];//创建NSURLRequest
+    NSMutableString *cookieValue = [NSMutableString stringWithFormat:@""];
+    NSMutableDictionary * properties = [[NSMutableDictionary alloc] init];
+    NSString * userName = [NSString stringWithFormat:@"agentAccount_%@",data.user.topAgentId];
+    NSString * loginStatus = [NSString stringWithFormat:@"s_LoginStatus_%@",data.user.topAgentId];
+    NSString * agentId = [NSString stringWithFormat:@"agent_%@",data.user.topAgentId];
+    NSString * RepeatQuote = [NSString stringWithFormat:@"isHavaLicenseno_%@",data.user.agentId];
+    NSString * token = [NSString stringWithFormat:@"tx_login_token_%@",data.user.topAgentId];
+    NSString * agentName = [NSString stringWithFormat:@"tx_login_agentname_%@",data.user.topAgentId];
+    NSString * s_token = [NSString stringWithFormat:@"s_token_%@",data.user.topAgentId];
+    if (data.user.token.length>1){
+        [properties setObject:data.user.topAgentId forKey:@"fromagent"];//
+    }
+        [properties setObject:data.user.userName forKey:userName];//
+        [properties setObject:data.user.loginStatus forKey:loginStatus];//
+        [properties setObject:data.user.agentId forKey:agentId];//
+        [properties setObject:data.user.token forKey:token];//
+        [properties setObject:data.user.RepeatQuote forKey:RepeatQuote];//
+        [properties setObject:data.user.agentName forKey:agentName];//
+        [properties setObject:data.user.token forKey:s_token];//
+        [properties enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
+            NSString * appendString = [NSString stringWithFormat:@"document.cookie ='%@=%@';", key, obj];
+            [cookieValue appendString:appendString];
+        }];
+    WKWebViewConfiguration * webConfig = [[WKWebViewConfiguration alloc] init];
+    webConfig.preferences = [[WKPreferences alloc] init];
+    // 默认为0
+    webConfig.preferences.minimumFontSize = 10;
+    // 默认认为YES
+    webConfig.preferences.javaScriptEnabled = YES;
+    // 在iOS上默认为NO，表示不能自动通过窗口打开
+    webConfig.preferences.javaScriptCanOpenWindowsAutomatically = NO;
+    // web内容处理池
+    webConfig.processPool = [[WKProcessPool alloc] init];
+    WKUserContentController * userContentController = WKUserContentController.new;
+    WKUserScript * cookieScript = [[WKUserScript alloc]
+                                   initWithSource: cookieValue
+                                   injectionTime:WKUserScriptInjectionTimeAtDocumentStart forMainFrameOnly:NO];
+    [userContentController addUserScript:cookieScript];
+
+    [userContentController addScriptMessageHandler:self name:GoLogin];
+    [userContentController addScriptMessageHandler:self name:GoHome];
+    webConfig.userContentController = userContentController;
+    _webView = [[WKWebView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height) configuration:webConfig];
+
     [self.view addSubview:_webView];
-    
-     if ([BHAPIBase getToken].length != 0) {
-         _tokenString =[BHAPIBase getToken];
-     }
-    NSURL * url = [NSURL URLWithString:[NSString stringWithFormat:@"http://wx.91bihu.com/home/index?token=%@",_tokenString]];//创建URL
-    
-    UserData * data = [UserData new];
-    NSDictionary * properties = [[NSMutableDictionary alloc] init];
-    NSString * userName = [NSString stringWithFormat:@"agentAccount_%@",data.topAgentId];
-    NSString * loginStatus = [NSString stringWithFormat:@"s_LoginStatus_%@",data.topAgentId];
-    NSString * agentId = [NSString stringWithFormat:@"agent_%@",data.topAgentId];
-    NSString * RepeatQuote = [NSString stringWithFormat:@"isHavaLicenseno_%@",data.agentId];
-    NSString * token = [NSString stringWithFormat:@"tx_login_token_%@",data.topAgentId];
-    NSString * agentName = [NSString stringWithFormat:@"tx_login_agentname_%@",data.topAgentId];
-    [properties setValue:@"fromagent" forKey:@"topAgent"];//kay
-    [properties setValue:userName forKey:@"userName"];//value值
-    [properties setValue:loginStatus forKey:@"loginStatus"];//kay
-    [properties setValue:agentId forKey:@"agentId"];//kay
-    [properties setValue:token forKey:@"token"];//kay
-    [properties setValue:RepeatQuote forKey:@"RepeatQuote"];//
-    [properties setValue:agentName forKey:@"agentName"];//kay
-//    [properties setValue:[NSDate dateWithTimeIntervalSinceNow:60*60] forKey:NSHTTPCookieExpires];
-    NSHTTPCookie *cookie = [[NSHTTPCookie alloc] initWithProperties:properties];
-    [[NSHTTPCookieStorage sharedHTTPCookieStorage] setCookie:cookie];
-    
-    NSURLRequest* request = [NSURLRequest requestWithURL:url];//创建NSURLRequest
+    _webView.UIDelegate = self;
+    _webView.navigationDelegate = self;
     [_webView loadRequest:request];//加载
 }
 
-
-- (void)buttonPress{
-    
-
-    
-    QuotationListViewController *listVc = [[QuotationListViewController alloc] init];
-    
-    listVc.tokenStr = _tokenString;
-    
-    [self.navigationController pushViewController:listVc animated:YES];
-    
-    
+- (void)leftButton{
+    if ([_webView canGoBack]) {
+        [_webView evaluateJavaScript:@"goBack ()" completionHandler:^(id _Nullable response, NSError * _Nullable error) {
+        }];
+    }
+    else{
+        [self backToLogin];
+    }
 }
 
-
-- (void)leftButton{
-    
-        NSUserDefaults *defatluts = [NSUserDefaults standardUserDefaults];
-        [defatluts removeObjectForKey:@"token"];
-        [defatluts synchronize];
-    
+- (void)openNewWindows{
+    RootViewController *loginVc = [[RootViewController alloc] init];
+    UINavigationController *logNav=[[UINavigationController alloc]initWithRootViewController:loginVc];
+    AppDelegate *app = (AppDelegate*)[UIApplication sharedApplication].delegate;
+    app.window.rootViewController = logNav;
+}
+- (void)backToLogin{
+    UserData * data = [UserData sharedUserData];
+    data.user = nil;
+    [data savedata];
+    if (self.navigationController.viewControllers.count>1){
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+    else{
         BHLoginController *loginVc = [[BHLoginController alloc] init];
         UINavigationController *logNav=[[UINavigationController alloc]initWithRootViewController:loginVc];
         AppDelegate *app = (AppDelegate*)[UIApplication sharedApplication].delegate;
-    
         app.window.rootViewController = logNav;
-    
+    }
 }
-
-
-#pragma mark -
 #pragma mark WKNavigationDelegate
-// 页面开始加载时调用
+//// 页面开始加载时调用
 - (void)webView:(WKWebView *)webView didStartProvisionalNavigation:(WKNavigation *)navigation{
-    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    hud.mode = MBProgressHUDModeIndeterminate;
-    hud.label.text = @"请稍等...";
-    hud.label.font = [UIFont systemFontOfSize:14];
-    NSLog(@"页面开始加载");
-    
-    
+
 }
 - (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation{
     NSLog(@"页面加载完成");
 
-    
-    [MBProgressHUD hideHUDForView:self.view animated:YES];
+//    [MBProgressHUD hideHUDForView:self.view animated:YES];
     
 }
+
+
 //加载出错的时间调用
 - (void)webView:(WKWebView *)webView didFailProvisionalNavigation:(WKNavigation *)navigation{
- 
-    [MBProgressHUD hideHUDForView:self.view animated:YES];
+//     [MBProgressHUD hideHUDForView:self.view animated:YES];
     NSLog(@"%@", @"页面加载出错！");
 }
 
 
+- (void)webView:(WKWebView *)webView runJavaScriptAlertPanelWithMessage:(NSString *)message initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(void))completionHandler
+{
+
+    completionHandler();
+}
+
+- (void)webView:(WKWebView *)webView runJavaScriptConfirmPanelWithMessage:(NSString *)message initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(BOOL))completionHandler
+{
+    completionHandler(NO);
+}
+
 - (void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message{
-    
+    if ([message.name isEqualToString:GoLogin]) {
+        [self backToLogin];
+    }
+    if ([message.name isEqualToString:GoHome]) {
+        [self openNewWindows];
+    }
 }
 
 
 -(void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
-    
-    //打电话
-    NSURL *URL = navigationAction.request.URL;
-    NSString *scheme = [URL scheme];
-    if(webView != _webView) {
-        decisionHandler(WKNavigationActionPolicyAllow);
-        return;
-    }
-    UIApplication *app = [UIApplication sharedApplication];
-    if ([scheme isEqualToString:@"tel"])
-    {
-        if ([app canOpenURL:URL])
-        {
-            [app openURL:URL];
-            decisionHandler(WKNavigationActionPolicyCancel);
-            return;
-        }
-    }
-    
+
     decisionHandler(WKNavigationActionPolicyAllow);
 }
-
-
-
 
 
 - (void)didReceiveMemoryWarning {
@@ -200,6 +172,10 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)dealloc{
+    [_webView.configuration.userContentController removeScriptMessageHandlerForName:@""];
+    [_webView.configuration.userContentController removeScriptMessageHandlerForName:@""];
+}
 /*
 #pragma mark - Navigation
 

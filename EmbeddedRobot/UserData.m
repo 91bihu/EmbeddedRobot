@@ -15,16 +15,15 @@ static UserData* userData;
 {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        userData = [UserData mj_objectWithKeyValues:[[NSUserDefaults standardUserDefaults] objectForKey:@"User"]];
+        NSDictionary * dic =[[NSUserDefaults standardUserDefaults] objectForKey:@"User"];
+        userData = [UserData mj_objectWithKeyValues:dic];
         if (!userData) {
             userData = [[super allocWithZone:NULL] init];
         }
     });
     return userData;
 }
-+(instancetype)allocWithZone:(struct _NSZone *)zone{
-    return [UserData sharedUserData];
-}
+
 - (void)savedata{
     NSDictionary * dic = self.mj_keyValues;
     [[NSUserDefaults standardUserDefaults] setObject:dic forKey:@"User"];

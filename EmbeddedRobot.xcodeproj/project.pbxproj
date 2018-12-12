@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0397D03D21C0A19A00E448A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0397D03C21C0A19A00E448A6 /* Main.storyboard */; };
+		0397D04321C1134C00E448A6 /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 0397D04221C1134C00E448A6 /* UserInfo.m */; };
 		039EAAE121BFBFBA00609993 /* UserData.m in Sources */ = {isa = PBXBuildFile; fileRef = 039EAADF21BFBFBA00609993 /* UserData.m */; };
 		054117B976C722A14EA4B5C6 /* libPods-EmbeddedRobot.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 281962A0932D99A6785A60D3 /* libPods-EmbeddedRobot.a */; };
 		3326288C1EFD3CC400736273 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3326288B1EFD3CC400736273 /* main.m */; };
@@ -45,6 +46,8 @@
 
 /* Begin PBXFileReference section */
 		0397D03C21C0A19A00E448A6 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		0397D04121C1134C00E448A6 /* UserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfo.h; sourceTree = "<group>"; };
+		0397D04221C1134C00E448A6 /* UserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfo.m; sourceTree = "<group>"; };
 		039EAADF21BFBFBA00609993 /* UserData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserData.m; sourceTree = "<group>"; };
 		039EAAE021BFBFBA00609993 /* UserData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserData.h; sourceTree = "<group>"; };
 		281962A0932D99A6785A60D3 /* libPods-EmbeddedRobot.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EmbeddedRobot.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -157,6 +160,8 @@
 				333044F01F05052D001EFE0C /* QuotationListViewController.m */,
 				039EAAE021BFBFBA00609993 /* UserData.h */,
 				039EAADF21BFBFBA00609993 /* UserData.m */,
+				0397D04121C1134C00E448A6 /* UserInfo.h */,
+				0397D04221C1134C00E448A6 /* UserInfo.m */,
 				332628BD1EFD3D6900736273 /* Tool */,
 				332628961EFD3CC400736273 /* Assets.xcassets */,
 				332628D01EFD4A2500736273 /* Info.plist */,
@@ -276,8 +281,8 @@
 				TargetAttributes = {
 					332628861EFD3CC400736273 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 8NZL4MFD85;
-						ProvisioningStyle = Automatic;
+						DevelopmentTeam = 9W9VC28A53;
+						ProvisioningStyle = Manual;
 					};
 					3326289F1EFD3CC500736273 = {
 						CreatedOnToolsVersion = 8.3.3;
@@ -400,6 +405,7 @@
 				039EAAE121BFBFBA00609993 /* UserData.m in Sources */,
 				3326288F1EFD3CC400736273 /* AppDelegate.m in Sources */,
 				3326288C1EFD3CC400736273 /* main.m in Sources */,
+				0397D04321C1134C00E448A6 /* UserInfo.m in Sources */,
 				339B04D71F0252D8004D9CEB /* KeychainItemWrapper.m in Sources */,
 				333044F11F05052D001EFE0C /* QuotationListViewController.m in Sources */,
 			);
@@ -545,12 +551,15 @@
 			baseConfigurationReference = 5B934BBB88CF290EC52C64FA /* Pods-EmbeddedRobot.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 8NZL4MFD85;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 9W9VC28A53;
 				INFOPLIST_FILE = EmbeddedRobot/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = xuan.EmbeddedRobot;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = General;
 			};
 			name = Debug;
 		};
@@ -559,12 +568,15 @@
 			baseConfigurationReference = 6FB70E1DC740A0ADC7F279C5 /* Pods-EmbeddedRobot.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 8NZL4MFD85;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 9W9VC28A53;
 				INFOPLIST_FILE = EmbeddedRobot/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = xuan.EmbeddedRobot;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = General;
 			};
 			name = Release;
 		};

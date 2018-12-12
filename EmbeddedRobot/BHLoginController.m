@@ -9,6 +9,7 @@
 #import "UserData.h"
 #import "BHLoginController.h"
 #import "AppDelegate.h"
+#import "MBProgressHUD.h"
 
 #import "BHAPIManager.h"
 #import <Masonry/Masonry.h>
@@ -141,31 +142,23 @@
 
 -(void)doLogin:(UIButton*)sender{
 
-    NSString *name=_userTxt.text;
-
-    
+    NSString *name=_userTxt.text;    
     [[[UIApplication sharedApplication] keyWindow] endEditing:YES];
-    
+    MBProgressHUD * hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     //调用登录接口
-    [[BHAPIManager manager] LoginUser:name sucess:^(NSDictionary *dict) {
-        NSLog(@"%@",dict);
-        BHAlert(@"成功", [dict objectForKey:@"msg"]);
-        UserData * data = [UserData mj_objectWithKeyValues:dict];
+    [[BHAPIManager manager] LoginUser:name sucess:^(NSDictionary *dict) {        
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        UserInfo * user = [UserInfo mj_objectWithKeyValues:dict];
+        UserData * data =[UserData sharedUserData];
+        data.user = user;
         [data savedata];
         if ([dict objectForKey:@"token"]) {
             [BHAPIBase setToken:[dict objectForKey:@"token"]];
         }
-        
         RootViewController *rootVC = [[RootViewController alloc] init];
-        
-        rootVC.tokenString = [dict objectForKey:@"token"];
-//        AppDelegate *app = (AppDelegate*)[UIApplication sharedApplication].delegate;
-//        
-//        app.window.rootViewController = rootVC;
-        
         [self.navigationController pushViewController:rootVC animated:YES];
     } failure:^(NSError *error) {
-        NSLog(@"%@",error);
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
         BHAlert(@"", [error localizedDescription]);
     }];
     
