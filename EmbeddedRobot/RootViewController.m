@@ -5,7 +5,7 @@
 //  Created by bihu_Mac on 2017/6/23.
 //  Copyright © 2017年 initial. All rights reserved.
 //
-
+#import "UserData.h"
 #import "RootViewController.h"
 #import <WebKit/WebKit.h>
 #import "MBProgressHUD.h"
@@ -82,6 +82,26 @@
          _tokenString =[BHAPIBase getToken];
      }
     NSURL * url = [NSURL URLWithString:[NSString stringWithFormat:@"http://wx.91bihu.com/home/index?token=%@",_tokenString]];//创建URL
+    
+    UserData * data = [UserData new];
+    NSDictionary * properties = [[NSMutableDictionary alloc] init];
+    NSString * userName = [NSString stringWithFormat:@"agentAccount_%@",data.topAgentId];
+    NSString * loginStatus = [NSString stringWithFormat:@"s_LoginStatus_%@",data.topAgentId];
+    NSString * agentId = [NSString stringWithFormat:@"agent_%@",data.topAgentId];
+    NSString * RepeatQuote = [NSString stringWithFormat:@"isHavaLicenseno_%@",data.agentId];
+    NSString * token = [NSString stringWithFormat:@"tx_login_token_%@",data.topAgentId];
+    NSString * agentName = [NSString stringWithFormat:@"tx_login_agentname_%@",data.topAgentId];
+    [properties setValue:@"fromagent" forKey:@"topAgent"];//kay
+    [properties setValue:userName forKey:@"userName"];//value值
+    [properties setValue:loginStatus forKey:@"loginStatus"];//kay
+    [properties setValue:agentId forKey:@"agentId"];//kay
+    [properties setValue:token forKey:@"token"];//kay
+    [properties setValue:RepeatQuote forKey:@"RepeatQuote"];//
+    [properties setValue:agentName forKey:@"agentName"];//kay
+//    [properties setValue:[NSDate dateWithTimeIntervalSinceNow:60*60] forKey:NSHTTPCookieExpires];
+    NSHTTPCookie *cookie = [[NSHTTPCookie alloc] initWithProperties:properties];
+    [[NSHTTPCookieStorage sharedHTTPCookieStorage] setCookie:cookie];
+    
     NSURLRequest* request = [NSURLRequest requestWithURL:url];//创建NSURLRequest
     [_webView loadRequest:request];//加载
 }

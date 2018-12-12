@@ -56,7 +56,7 @@
     if ([BHAPIBase getToken].length != 0) {
         _tokenStr =[BHAPIBase getToken];
     }
-    NSURL * url = [NSURL URLWithString:[NSString stringWithFormat:@"http://wx.91bihu.com/quote/myquote?token=%@",_tokenStr]];//创建URL
+    NSURL * url = [NSURL URLWithString:[NSString stringWithFormat:@"http://192.168.5.19:7777/quote/myquote?token=%@",_tokenStr]];//创建URL
     NSURLRequest* request = [NSURLRequest requestWithURL:url];//创建NSURLRequest
     [_webView loadRequest:request];//加载
 }

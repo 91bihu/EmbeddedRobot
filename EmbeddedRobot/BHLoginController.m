@@ -5,9 +5,9 @@
 //  Created by bihu_Mac on 2017/6/23.
 //  Copyright © 2017年 initial. All rights reserved.
 //
-
+#import "MJExtension.h"
+#import "UserData.h"
 #import "BHLoginController.h"
-
 #import "AppDelegate.h"
 
 #import "BHAPIManager.h"
@@ -150,10 +150,12 @@
     [[BHAPIManager manager] LoginUser:name sucess:^(NSDictionary *dict) {
         NSLog(@"%@",dict);
         BHAlert(@"成功", [dict objectForKey:@"msg"]);
-        
+        UserData * data = [UserData mj_objectWithKeyValues:dict];
+        [data savedata];
         if ([dict objectForKey:@"token"]) {
             [BHAPIBase setToken:[dict objectForKey:@"token"]];
         }
+        
         RootViewController *rootVC = [[RootViewController alloc] init];
         
         rootVC.tokenString = [dict objectForKey:@"token"];
