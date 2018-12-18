@@ -90,13 +90,14 @@
     
     //AgentId:顶级账号id
   //顶级账号的秘钥
-    NSDictionary *temparameters = @{@"AgentId":@(102),@"ExpireTime":[self gerThreeTime],@"Timestamp":[self getTime],@"UniqueCode":[self getDeviceID],@"UserName": Name,@"SecretKey":@"60a78c69d89"};
+    NSDictionary *temparameters = @{@"AgentId":@(9121),@"ExpireTime":[self gerThreeTime],@"Timestamp":[self getTime],@"UniqueCode":[self getDeviceID],@"UserName": Name,@"SecretKey":@"94fee470b43270a912c27d56c27b3211"};
+    
         //SecretKey:  60a78c69d89
         //SecretKey:  gsb23np5npnhk26
     NSDictionary *parameters=[self refineUsrWithDic:temparameters];
     //http://192.168.5.54:9999
     //http://wx.91bihu.com
-    NSString *url=[NSString stringWithFormat:@"%@",@"http://192.168.5.19:9094/api/unite/LoginAPP"];
+    NSString *url=[NSString stringWithFormat:@"%@",@"http://wx.91bihu.com/api/unite/LoginAPP"];
     
     return [self requestWithMethod:BHRequestMethodJSONPOST
                          URLString:url

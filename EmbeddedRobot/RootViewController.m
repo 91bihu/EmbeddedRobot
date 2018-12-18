@@ -38,7 +38,7 @@ static NSString *const GoHome = @"goHome";
     self.navigationItem.leftBarButtonItem = leftBarButton;
     
     UserData * data = [UserData sharedUserData];
-    NSURL * url = [NSURL URLWithString:@"http://192.168.5.19:7776"];
+    NSURL * url = [NSURL URLWithString:@"http://wx.91bihu.com/index.html"];
     NSURLRequest * request = [NSURLRequest requestWithURL:url];//创建NSURLRequest
     NSMutableString *cookieValue = [NSMutableString stringWithFormat:@""];
     NSMutableDictionary * properties = [[NSMutableDictionary alloc] init];
@@ -123,19 +123,20 @@ static NSString *const GoHome = @"goHome";
 #pragma mark WKNavigationDelegate
 //// 页面开始加载时调用
 - (void)webView:(WKWebView *)webView didStartProvisionalNavigation:(WKNavigation *)navigation{
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
 
 }
 - (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation{
     NSLog(@"页面加载完成");
 
-//    [MBProgressHUD hideHUDForView:self.view animated:YES];
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
     
 }
 
 
 //加载出错的时间调用
 - (void)webView:(WKWebView *)webView didFailProvisionalNavigation:(WKNavigation *)navigation{
-//     [MBProgressHUD hideHUDForView:self.view animated:YES];
+     [MBProgressHUD hideHUDForView:self.view animated:YES];
     NSLog(@"%@", @"页面加载出错！");
 }
 

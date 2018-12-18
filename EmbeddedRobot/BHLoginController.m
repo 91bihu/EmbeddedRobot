@@ -53,33 +53,24 @@
     [super viewDidLoad];
     self.view.backgroundColor=[UIColor whiteColor];
 //    [self.view endEditing:YES];
-
 }
 
--(void)dealloc{
-    
-   
-}
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    
-}
+    }
 
 -(void)viewDidDisappear:(BOOL)animated{
     
     [super viewDidDisappear:animated];
-    
 }
-
 #pragma mark -
 #pragma mark 视图布局约束
 
 -(void)initView{
     
+    self.title = @"登陆";
     BHWeakSelf(weakSelf);
-   
-    
     //编辑区*********************
     UIView *userView=[UIView new];
     userView.backgroundColor=[UIColor whiteColor];;
@@ -144,7 +135,7 @@
 
     NSString *name=_userTxt.text;    
     [[[UIApplication sharedApplication] keyWindow] endEditing:YES];
-    MBProgressHUD * hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     //调用登录接口
     [[BHAPIManager manager] LoginUser:name sucess:^(NSDictionary *dict) {        
         [MBProgressHUD hideHUDForView:self.view animated:YES];
